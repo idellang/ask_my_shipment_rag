@@ -1,8 +1,77 @@
-# ignore processed data and vector index
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+shipment_rag_venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environment variables
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# Data and index folders
 data/processed/
 index/
-# ignore environment files
-.env*
-# Python artifacts
-__pycache__/
-*.pyc
+
+# Logs
+*.log
+
+# MacOS files
+.DS_Store
+
+# venv
+# Ignore venv directories
+venv/
+*.venv/
+shipment_rag_venv/
+
+# json
+*.json
+*.jsonl
+
+# CSV files
+*.csv
