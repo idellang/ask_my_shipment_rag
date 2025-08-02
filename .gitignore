@@ -1,0 +1,8 @@
+# ignore processed data and vector index
+data/processed/
+index/
+# ignore environment files
+.env*
+# Python artifacts
+__pycache__/
+*.pyc
