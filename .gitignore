@@ -75,3 +75,49 @@ shipment_rag_venv/
 
 # CSV files
 *.csv
+
+# OS/editor
+.DS_Store
+.vscode/
+*.code-workspace
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.python-version
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Testing/coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Env/Secrets
+.env
+.env.*
+
+# Data (local, large)
+data/**
+!data/.gitkeep
+!data/README.md
+
+# Warehouses and artifacts
+*.duckdb
+*.db
+*.parquet
+
+# App downloads/exports
+downloads/
+exports/
+tmp/
+.cache/
