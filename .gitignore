@@ -73,8 +73,6 @@ shipment_rag_venv/
 *.json
 *.jsonl
 
-# CSV files
-*.csv
 
 # OS/editor
 .DS_Store
