@@ -1,0 +1,19 @@
+# Ignore local data and env
+data/
+.venv/
+venv/
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+
+# Notebooks outputs
+.ipynb_checkpoints/
+
+# Git / OS
+.git
+.DS_Store

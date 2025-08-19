@@ -16,7 +16,7 @@
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/idellang/ask_my_shipment_rag.git
+git clone https://github.com/<your-username>/ask_my_shipment.git
 cd ask_my_shipment
 ```
 
@@ -50,8 +50,6 @@ OPENAI_API_KEY = "sk-...your-key-here..."
 ```bash
 streamlit run streamlit_app/app.py
 ```
-
-
 
 ```
 ask_my_shipment/
