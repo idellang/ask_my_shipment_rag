@@ -2,6 +2,7 @@ import json
 import pandas as pd
 from openai import OpenAI
 from utils.keys import get_openai_key
+from utils.core import LLM_MODEL
 
 
 def _summarize_df_for_llm(df: pd.DataFrame, max_rows=20, max_cols=12):
@@ -36,7 +37,7 @@ def _client():
     return OpenAI(api_key=key)
 
 
-def generate_llm_insights(results: dict, question: str, max_rows=20, max_cols=12, model="gpt-4o") -> list[str]:
+def generate_llm_insights(results: dict, question: str, max_rows=20, max_cols=12, model=LLM_MODEL) -> list[str]:
     client = _client()
     df = results.get("df")
     snap = _summarize_df_for_llm(df, max_rows=max_rows, max_cols=max_cols)
@@ -84,5 +85,11 @@ Chart spec (Vega-Lite JSON):
         if not bullets and text:
             bullets = ["- " + text]
         return bullets[:6] or ["- No insights available."]
+    except OpenAI.RateLimitError:
+        return ["- Insight generation failed: OpenAI API rate limit exceeded. Please try again later."]
+    except OpenAI.AuthenticationError:
+        return ["- Insight generation failed: Invalid OpenAI API key. Please check your secrets configuration."]
+    except OpenAI.APIError as e:
+        return [f"- Insight generation failed: OpenAI API returned an error: {e}"]
     except Exception as e:
-        return [f"- Insight generation failed: {e}"]
+        return [f"- Insight generation failed with an unexpected error: {e}"]

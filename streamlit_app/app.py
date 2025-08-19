@@ -14,6 +14,7 @@ from utils.helpers import (
     ROOT, DB_PATH, DICT_PATH, _schema_text, _dict_text
 )
 from utils.keys import get_openai_key
+from utils.core import LLM_MODEL
 
 # top page
 st.set_page_config(
@@ -164,7 +165,7 @@ if result:
     if st.button("Generate Insights", key="insights_btn"):
         with st.spinner("Generating insights..."):
             bullets = generate_llm_insights(
-                result, st.session_state.last_query, max_rows=20, max_cols=12, model="gpt-4o")
+                result, st.session_state.last_query, max_rows=20, max_cols=12, model=LLM_MODEL)
         st.markdown(
             "\n".join(f"- {b}" for b in bullets), unsafe_allow_html=True)
 
