@@ -119,3 +119,18 @@ downloads/
 exports/
 tmp/
 .cache/
+
+
+# Python Virtual Environment
+shipment_rag_venv/
+.venv/
+
+# Local secrets
+.streamlit/secrets.toml
+
+# Python cache
+__pycache__/
+*.egg-info/
+
+# Notebook checkpoints
+.ipynb_checkpoints/

@@ -35,6 +35,8 @@ def _client():
     return OpenAI(api_key=key)
 
 
+LLM_MODEL = "gpt-4o"
+
 SYSTEM_PROMPT = """
 You write Python analysis code for DuckDB-backed trade data and return ONLY JSON.
 
@@ -84,7 +86,7 @@ def generate_code(question: str) -> dict:
     dict_text = _dict_text()
     prompt = build_user_prompt(question, schema_text, dict_text)
     resp = client.chat.completions.create(
-        model="gpt-4o",
+        model=LLM_MODEL,
         messages=[{"role": "system", "content": SYSTEM_PROMPT},
                   {"role": "user", "content": prompt}],
         temperature=0.0
